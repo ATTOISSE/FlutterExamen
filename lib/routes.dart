@@ -2,14 +2,14 @@
 
 import 'package:app_notes/bloc/note/note.dart';
 import 'package:app_notes/models/note.dart';
+import 'package:app_notes/pages/ajout.page.dart';
 
 import 'package:app_notes/pages/connexion.page.dart';
 import 'package:app_notes/pages/home.page.dart';
 import 'package:app_notes/pages/inscription.page.dart';
+import 'package:app_notes/pages/liste.page.dart';
+import 'package:app_notes/pages/update.page.dart';
 
-import 'package:app_notes/screens/ajout.page.dart';
-import 'package:app_notes/screens/liste.page.dart';
-import 'package:app_notes/screens/update.page.dart';
 
 import 'package:flutter/material.dart';
 
@@ -34,10 +34,10 @@ class Routes {
       case AJOUT_PAGE:
         return MaterialPageRoute(builder: (_) => AjoutPage());
       case UPDATE_PAGE:
-        final noteM = settings.arguments as NoteM;
+        final note = settings.arguments as Note;
         return MaterialPageRoute(
             builder: (_) => ModificationPage(
-                  note: noteM,
+                  note: note,
                 ));
       default:
         return MaterialPageRoute(
